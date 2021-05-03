@@ -10,15 +10,15 @@ const AllTasks = () => (
       <h2 className="task-list-title">My Lists</h2>
       
       <ul className="task-list">
-         <li className="active-list">Youtube</li>
-         <li>Work</li>
-         <li>Groceries</li>
+         <li id="active-list" className="list-name">Youtube</li>
+         <li className="list-name">Work</li>
+         <li className="list-name">Groceries</li>
       </ul>
    
 
       <form action="">
          <Input type="text" className="new-input list" placeholder="New List Name" />
-         <Button className="list" aria-label="create new list">+</Button>
+         <Button className="list create" aria-label="create new list">+</Button>
       </form>
    </div>
 )

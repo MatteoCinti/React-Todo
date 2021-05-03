@@ -5,10 +5,10 @@ import './input.styles.scss';
 
 const Input = ({type, id, className, placeholder, label}) => (
    <React.Fragment>
-      <input type={type} id={id} className={`btn ${className}`} placeholder={placeholder}  aria-label={placeholder}/>
+      <input type={type} id={id} className={`${className}`} placeholder={placeholder}  aria-label={placeholder}/>
       {label ? 
-         <label for={id}>
-            <span class="custom-checkbox"></span>
+         <label htmlFor={id}>
+            <span className="custom-checkbox"></span>
             {label}
          </label> : 
          null

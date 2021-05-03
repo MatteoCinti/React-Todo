@@ -1,9 +1,27 @@
+@use '../../scss/abstracts' as *;
+
 .new-input{
-   background-color: rgba(0, 0, 0, .1);
+   background-color: rgba(0, 0, 0, .2);
    border: 0;
-   border-bottom: 1px solid currentColor;
    color: inherit;
-   font-size: inherit;
+   font-size: $text-thumbnail-size;
    font-family: inherit;
    outline: none;
+   border-radius: 15px;
+   padding: .5rem .8rem;
+   transition: 300ms ease all;
+   order: 2;
+
+   &.task-input{
+      background-color: rgba(0, 0, 0, .5);
+      &:focus{
+         background-color: rgba(0, 0, 0, .75);
+      }
+   }
+
+   &:focus{
+      background-color: rgba(0, 0, 0, .15);
+      color: $neon-pink-focus;
+   }
+
 }

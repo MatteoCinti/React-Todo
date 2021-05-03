@@ -1,0 +1,128 @@
+@use '../../scss/abstracts' as *;
+$secondary-pink: rgba(248, 85, 226, 0.815);
+$dark-purple: rgba(49, 7, 47, 0.877);
+$dark-purple-opacity: rgba(0, 0, 0, .28);
+
+
+.todo-list{
+   $spacer: 2rem;
+   $radius: 15px;
+   
+   grid-area: active;
+   background: $dark-purple-opacity;
+   border-radius: $radius;
+
+   .todo-header{
+      background-color: $secondary-pink;
+      padding: $spacer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: $dark-purple;
+      border-top-left-radius: $radius;
+      border-top-right-radius: $radius;
+
+      .todo-title{
+         margin: 0 1rem 0 0;
+         font-weight: $bold;
+         font-size: $title-font-size;
+      }
+      .task-count{
+         margin: 0;
+         transform: translateY(0.2rem);
+         font-weight: $medium;
+         font-size: $text-thumbnail-size;
+      }
+   }
+
+   .todo-body{
+      padding: $spacer;
+      position: relative;
+      font-size: 1.225rem;
+
+      .delete-tasks {
+         position: absolute;
+         width: 100%;
+         left: 0;
+         bottom: -30px;
+         
+         .delete{
+            font-size: $text-thumbnail-size;
+            margin-left: 1.3em;
+            @include pointer-hover(neon);
+         }
+         
+      }
+      
+   }   
+}
+
+// Custom Checkbox
+[type = "checkbox"]{
+   opacity: 0;
+   position: absolute;
+}
+
+.task {
+   position: relative;
+   margin-bottom: 1.5em;
+  
+
+   label{
+      @include pointer-hover(neon, $font-weight: $medium);
+
+      display: inline-flex;
+      align-items: center;  
+      position: relative;
+
+
+      // Strikethrough
+      @include pseudo-element(after, $top: null, $bottom: null, $left: 1em){
+         height: 0.1rem;
+         transform: scalex(0);
+         transform-origin: right;
+         transition: transform 150ms ease-out;
+      }
+   }
+  
+   // Underline
+   @include pseudo-element(after, $top: null, $bottom: -50%){
+      height: 1px;
+      background: $secondary-pink;
+      opacity: 0.3;
+   }
+}
+
+.custom-checkbox{
+   $size: .55em;
+
+   display: inline-block;
+   width: $size;
+   height: $size;
+   margin-right: $size;
+   cursor: pointer;
+   border: 1px solid currentColor;
+   border-radius: 50%;
+   transform: scale(1);
+   transition: all 200ms ease-in-out;
+}
+
+.task:hover .custom-checkbox,
+[type = "checkbox"]:focus + label .custom-checkbox{
+   transform: scale(1.25);
+}
+
+[type = "checkbox"]:checked + label {
+   opacity: .6;
+
+   &::after{
+      transform: scaleX(1);
+      transform-origin: left;
+   }
+
+   .custom-checkbox{
+      background: $neon-pink;
+      box-shadow: inset 0 0 0 2px rgba(34, 4, 29, 0.918);
+   }
+}
+

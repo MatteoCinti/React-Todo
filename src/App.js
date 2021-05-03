@@ -18,7 +18,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <h1 class="title">Stuff I need to do</h1>
+      <h1 className="title">Stuff I need to do</h1>
       <AllTasks />
       <ToDoList />
     </div>

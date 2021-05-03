@@ -1,12 +1,29 @@
 @use '../../scss/abstracts' as *;
 
+.all-tasks{
+   grid-area: lists;
+}
+.task-list-title{
+   font-size: $title-font-size;
+   margin-top: 1em;
+}
+
 .task-list{
-   font-size: 1.125rem;
+   font-size: $text-small-size;
    line-height: 1.9;
    list-style: circle;
    padding-left: 1.1em;
+   
 
-   .active-list{
+   .list-name {
+      @include pointer-hover(neon);
+   }
+
+   #active-list{
+      @include neon-hover;
       font-weight: $bold;
+      &:hover{
+         opacity: 0.75;
+      }
    }
 }

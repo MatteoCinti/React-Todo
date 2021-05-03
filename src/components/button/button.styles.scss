@@ -1,0 +1,23 @@
+@use '../../scss/abstracts' as *;
+
+
+.btn{
+   cursor: pointer;
+   background: 0;
+   border: 0;
+   padding: 0;
+   color: inherit;
+   font-family: inherit;
+   font-size: 0.925rem;
+   transition: opacity 125ms ease-in;
+   
+   &.create {
+      font-size: 1.225rem;
+      font-weight: $black;
+      margin-right: 0.5em;
+      transform: translateY(-0.1em);
+      &:hover{
+         @include neon-text($font-weight: $black);
+      }
+   }
+}
