@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+// Import dependencies
+import React, { useEffect } from 'react';
 
-function App() {
+// Import components
+import AllTasks from "./components/all-tasks/all-tasks.component"
+import ToDoList from "./components/todo-list/todo-list.component"
+
+// Import Files and CSS
+import './App.scss';
+
+const App = () => {
+
+  // Setting Website Title
+  useEffect(() => {    
+    document.title = `React Todo App`;  
+  }, []);
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1 class="title">Stuff I need to do</h1>
+      <AllTasks />
+      <ToDoList />
     </div>
   );
 }

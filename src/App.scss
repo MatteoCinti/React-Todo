@@ -1,0 +1,38 @@
+@use './scss/abstracts' as *;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body{
+  font-family: $montserrat;
+  background-color: $background-color;
+  color: $neon-pink;
+  font-size: 1.5rem;
+}
+
+.App{
+  display: grid;
+  grid: 
+    "header header header header" auto
+    "...... lists  active ......" auto /
+    1fr minmax(100px, 300px) minmax(250px, 500px) 1fr
+}
+
+.title{
+  grid-area: header;
+  text-align: center;
+  font-size: calc(7vw + 2rem);
+  font-weight: $black;
+  color: rgba(0, 0, 0, .18)
+}
+
+.all-tasks{
+  grid-area: lists;
+}
+
+.todo-list{
+  grid-area: active;
+}

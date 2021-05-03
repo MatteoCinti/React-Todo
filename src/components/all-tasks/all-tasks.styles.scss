@@ -1,0 +1,12 @@
+@use '../../scss/abstracts' as *;
+
+.task-list{
+   font-size: 1.125rem;
+   line-height: 1.9;
+   list-style: circle;
+   padding-left: 1.1em;
+
+   .active-list{
+      font-weight: $bold;
+   }
+}
