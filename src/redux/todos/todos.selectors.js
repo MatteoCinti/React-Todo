@@ -1,3 +1,3 @@
 export function getLists(state) {
-   return state.todos;
+   return state.todoLists;
  }
